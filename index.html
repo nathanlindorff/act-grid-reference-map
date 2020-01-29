@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://fiddle.jshell.net/jtm6ne8f/show/light/ -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>RFS Grid Reference Plot for Zone 55H</title>
+
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="./result-light.css" />
+
+    <script type="text/javascript" src="./leaflet.js"></script>
+    <link rel="stylesheet" type="text/css" href="./leaflet.css" />
+    <script type="text/javascript" src="./L.LatLng.UTM.js"></script>
+    <script type="text/javascript" src="./jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="index.css" />
+
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body>
+    <div id="inputs">
+      RFS Grid Ref:
+      <input id="easting" maxlength="3" placeholder="3 digit easting" />
+      <input
+        id="northing"
+        maxlength="3"
+        placeholder="3 digit northing"
+      />&nbsp;<input id="plot" type="button" value="Plot" />
+    </div>
+    <div id="map"></div>
+
+    Note:<br />
+    Currently supports 6 digit references originating in the areas marked in
+    blue of UTM zone 55, band H. <br />
+    Depending on origin of the grid reference it may be in either of the blue
+    squares, both will be plotted, but only one will be correct, you have to
+    deduce which.
+
+    <script>
+      // tell the embed parent frame the height of the content
+      if (window.parent && window.parent.parent) {
+        window.parent.parent.postMessage(
+          [
+            "resultsFrame",
+            {
+              height: document.body.getBoundingClientRect().height,
+              slug: "jtm6ne8f"
+            }
+          ],
+          "*"
+        );
+      }
+
+      // always overwrite window.name, in case users try to set it manually
+      window.name = "result";
+    </script>
+  </body>
+</html>
